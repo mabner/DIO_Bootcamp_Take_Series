@@ -26,6 +26,7 @@ namespace Series
 		public override string ToString()
 		{
 			string retorno = "";
+            // Emviroment.NewLine insere uma nova linha uvando a forma que o sistema operacional trabalha
 			retorno += "Gênero: " + this.Genero + Environment.NewLine;
 			retorno += "Título: " + this.Titulo + Environment.NewLine;
 			retorno += "Descrição: " + this.Descricao + Environment.NewLine;
