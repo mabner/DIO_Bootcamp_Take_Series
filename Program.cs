@@ -100,7 +100,8 @@
 			{
 				Console.Clear();
 				Console.WriteLine("Nenhuma serie cadastrada. Pressione qualquer tecla pra retornar ao menu principal");
-				Console.Read();
+				Console.ReadLine();
+				Console.Clear();
 				return;
 			}
 
@@ -108,9 +109,7 @@
 			{
 				var excluido = serie.retornaExcluido();
 
-				Console.Clear();
-				Console.WriteLine("#ID {0}: - {1}", serie.retornaId(), serie.retornaTitulo(), (excluido ? "Excluído" : ""));
-				Console.Read();
+				Console.WriteLine("#ID {0}: - {1} {2}", serie.retornaId(), serie.retornaTitulo(), (excluido ? "*Excluído*" : ""));
 			}
 		}
 
@@ -145,7 +144,6 @@
 		// Menu
 		private static string ObterOpcaoUsuario()
 		{
-			Console.Clear();
 			Console.WriteLine("  ████████▄   ▄█   ▄██████▄     ");
 			Console.WriteLine("  ███   ▀███ ███  ███    ███    ");
 			Console.WriteLine("  ███    ███ ███▌ ███    ███    ");
