@@ -17,7 +17,7 @@
 						InserirSerie();
 						break;
 					case "3":
-						//AtualizarSerie();
+						AtualizarSerie();
 						break;
 					case "4":
 						//RemoverSerie();
@@ -36,6 +36,38 @@
 
 			Console.WriteLine("Opção escolhida: " + opcaoUsuario);
 			Console.Read();
+		}
+
+		// Atualizar série cadastrada
+		private static void AtualizarSerie()
+		{
+			int indiceSerie = int.Parse(Console.ReadLine());
+
+			Console.Write("Digite o ID da série: ");
+			foreach (int i in Enum.GetValues(typeof(Genero)))
+			{
+				Console.WriteLine("{0}-{1}", i, Enum.GetName(typeof(Genero), i));
+			}
+
+			Console.Write("Digite o gênero da série: ");
+			int entradaGenero = int.Parse(Console.ReadLine());
+
+			Console.Write("Digite o título da série: ");
+			string entradaTitulo = Console.ReadLine();
+
+			Console.Write("Digite o ano de início da série: ");
+			int entradaAno = int.Parse(Console.ReadLine());
+
+			Console.Write("Digite a descrição da série: ");
+			string entradaDescricao = Console.ReadLine();
+
+			Serie atualizaSerie = new Serie(id: indiceSerie,
+											genero: (Genero)entradaGenero,
+											titulo: entradaTitulo,
+											ano: entradaAno,
+											descricao: entradaDescricao);
+			// Passa o ID e os dados pra atualizar
+			repositorio.Atualiza(indiceSerie, atualizaSerie);
 		}
 
 		// Listar series cadastradas
