@@ -20,10 +20,10 @@
 						AtualizarSerie();
 						break;
 					case "4":
-						//RemoverSerie();
+						RemoverSerie();
 						break;
 					case "5":
-						//VisualizarSerie();
+						VisualizarSerie();
 						break;
 					case "C":
 						Console.Clear();
@@ -38,12 +38,31 @@
 			Console.Read();
 		}
 
+		private static void VisualizarSerie()
+		{
+			Console.WriteLine("Informe o ID da série pra visualizar: ");
+			int indiceSerie = int.Parse(Console.ReadLine());
+
+			var serie = repositorio.RetornarPorId(indiceSerie);
+
+			Console.WriteLine(serie);
+		}
+
+		// Exlui o cadastro da série
+		private static void RemoverSerie()
+		{
+			Console.Write("Digite o ID da série: ");
+			int indiceSerie = int.Parse(Console.ReadLine());
+
+			repositorio.Exclui(indiceSerie);
+		}
+
 		// Atualizar série cadastrada
 		private static void AtualizarSerie()
 		{
+			Console.Write("Digite o ID da série: ");
 			int indiceSerie = int.Parse(Console.ReadLine());
 
-			Console.Write("Digite o ID da série: ");
 			foreach (int i in Enum.GetValues(typeof(Genero)))
 			{
 				Console.WriteLine("{0}-{1}", i, Enum.GetName(typeof(Genero), i));
@@ -87,8 +106,10 @@
 
 			foreach (var serie in lista)
 			{
+				var excluido = serie.retornaExcluido();
+
 				Console.Clear();
-				Console.WriteLine("#ID {0}: - {1}", serie.retornaId(), serie.retornaTitulo());
+				Console.WriteLine("#ID {0}: - {1}", serie.retornaId(), serie.retornaTitulo(), (excluido ? "Excluído" : ""));
 				Console.Read();
 			}
 		}
@@ -137,7 +158,7 @@
 			Console.WriteLine("       ╚═╗├┤ ├┬┘│├┤ └─┐        ");
 			Console.WriteLine("       ╚═╝└─┘┴└─┴└─┘└─┘        ");
 			Console.WriteLine();
-			Console.WriteLine("Informe a opção desejada:");
+			Console.WriteLine("Escolha a opção desejada:");
 			Console.WriteLine("1 - Listar séries");
 			Console.WriteLine("2 - Inserir nova série");
 			Console.WriteLine("3 - Atualizar série");
