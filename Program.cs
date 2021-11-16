@@ -14,16 +14,31 @@
 						ListarSeries();
 						break;
 					case "2":
-						InserirSerie();
+						//ListarFilme();
 						break;
 					case "3":
-						AtualizarSerie();
+						InserirSerie();
 						break;
 					case "4":
-						RemoverSerie();
+						//InserirFilme();
 						break;
 					case "5":
+						AtualizarSerie();
+						break;
+					case "6":
+						//AtualizarFilme();
+						break;
+					case "7":
+						RemoverSerie();
+						break;
+					case "8":
+						//RemoverFilme();
+						break;
+					case "9":
 						VisualizarSerie();
+						break;
+					case "10":
+						//VisualizarFilme();
 						break;
 					case "C":
 						Console.Clear();
@@ -38,6 +53,7 @@
 			Console.Read();
 		}
 
+		// Visualizar série
 		private static void VisualizarSerie()
 		{
 			Console.WriteLine("Informe o ID da série pra visualizar: ");
@@ -144,24 +160,27 @@
 		// Menu
 		private static string ObterOpcaoUsuario()
 		{
-			Console.WriteLine("  ████████▄   ▄█   ▄██████▄     ");
-			Console.WriteLine("  ███   ▀███ ███  ███    ███    ");
-			Console.WriteLine("  ███    ███ ███▌ ███    ███    ");
-			Console.WriteLine("  ███    ███ ███▌ ███    ███    ");
-			Console.WriteLine("  ███    ███ ███▌ ███    ███    ");
-			Console.WriteLine("  ███    ███ ███  ███    ███    ");
-			Console.WriteLine("  ███   ▄███ ███  ███    ███    ");
-			Console.WriteLine("  ████████▀  █▀    ▀██████▀     ");
-			Console.WriteLine("       ╔═╗┌─┐┬─┐┬┌─┐┌─┐        ");
-			Console.WriteLine("       ╚═╗├┤ ├┬┘│├┤ └─┐        ");
-			Console.WriteLine("       ╚═╝└─┘┴└─┴└─┘└─┘        ");
 			Console.WriteLine();
-			Console.WriteLine("Escolha a opção desejada:");
-			Console.WriteLine("1 - Listar séries");
-			Console.WriteLine("2 - Inserir nova série");
-			Console.WriteLine("3 - Atualizar série");
-			Console.WriteLine("4 - Exluir série");
-			Console.WriteLine("5 - Visualizar série");
+			Console.WriteLine("     ████████▄   ▄█   ▄██████▄     ");
+			Console.WriteLine("     ███   ▀███ ███  ███    ███    ");
+			Console.WriteLine("     ███    ███ ███▌ ███    ███    ");
+			Console.WriteLine("     ███    ███ ███▌ ███    ███    ");
+			Console.WriteLine("     ███    ███ ███▌ ███    ███    ");
+			Console.WriteLine("     ███    ███ ███  ███    ███    ");
+			Console.WriteLine("     ███   ▄███ ███  ███    ███    ");
+			Console.WriteLine("     ████████▀  █▀    ▀██████▀     ");
+			Console.WriteLine("          ╔═╗┌─┐┬─┐┬┌─┐┌─┐        ");
+			Console.WriteLine("          ╚═╗├┤ ├┬┘│├┤ └─┐        ");
+			Console.WriteLine("          ╚═╝└─┘┴└─┴└─┘└─┘        ");
+			Console.WriteLine();
+			Console.WriteLine("	Escolha a opção desejada:			");
+			Console.WriteLine();
+			Console.WriteLine("1 - Listar séries        2 - Listar filmes");
+			Console.WriteLine("3 - Inserir nova série   4 - Inserir novo filme");
+			Console.WriteLine("5 - Atualizar série      6 - Atualizar filme");
+			Console.WriteLine("7 - Exluir série         8 - Excluir filme");
+			Console.WriteLine("9 - Visualizar série    10 - Visualizar filme");
+			Console.WriteLine();
 			Console.WriteLine("C - Limpar tela");
 			Console.WriteLine("X - Sair");
 			Console.WriteLine();
