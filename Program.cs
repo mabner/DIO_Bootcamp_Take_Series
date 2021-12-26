@@ -1,4 +1,6 @@
-﻿namespace Series
+﻿using System;
+
+namespace Series
 {
 	class Program
 	{
